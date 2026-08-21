@@ -1,0 +1,22 @@
+Hukuk Sistemleri ve Temel Kavramlar
+
+1. Hukukun Tanımı ve Amacı
+Hukuk, toplum içindeki bireylerin birbirleriyle ve devletle olan ilişkilerini düzenleyen, emredici ve yaptırımla desteklenmiş kurallar bütünüdür. Hukukun temel amacı adaleti sağlamak, toplumda huzur ve güven ortamı oluşturmaktır.
+
+2. Hukuk Kurallarının Özellikleri
+- Genellik: Aynı durumdaki herkes için geçerlidir.
+- Soyutluk: Somut bir olaya değil, genel durumlar için hazırlanır.
+- Süreklilik: Yürürlükten kaldırılana kadar uygulanır.
+- Yaptırım (Müeyyide): Uyulmadığında devlet gücüyle zor kullanılır.
+
+3. Hukuk Türleri
+- Pozitif Hukuk: Bir ülkede belirli bir zamanda yürürlükte olan yazılı ve yazısız tüm hukuk kurallarıdır.
+- Mevzuat (Yazılı Hukuk): Yetkili organlar tarafından konulan sadece yazılı hukuk kurallarını kapsar.
+- İdeal (Tabii) Hukuk: Olanı değil, olması gereken adaleti hedefleyen hukuk anlayışıdır.
+
+4. Normlar Hiyerarşisi
+Hukuk kuralları alt-üst ilişkisi içindedir. Alt kademedeki bir kural, üst kademedeki kurala aykırı olamaz:
+1. Anayasa (En üst hukuk kuralıdır)
+2. Kanun ve Milletlerarası Antlaşmalar
+3. Cumhurbaşkanlığı Kararnameleri
+4. Yönetmelikler

@@ -1,0 +1,36 @@
+[
+  {
+    "question": "\"Mitokondri nedir ve görevi nedir?\"",
+    "answer": "Mitokondri, genişleme ve enerji üretimi için kritik bir rol oynar. Enerji, mitokondri tarafından ATP (adenozol tiplet fosfat) oluşturur, bu enerji depolama ve transportu için gerekli enerjinin bir yakalanmasıdır.\n\nŞimdi, mitokondri görevi daha açık bir açı:\n\nMitokondri, organik dünyaların enerji üretimi için kritik bir organik bileşendir. Bu organik bileşen, enerji depolama için ATP oluşturur, bu enerji depolama ve transportu için gerekli enerjinin yakalanmasıdır",
+    "sources": [
+      {
+        "file": "notes/biyoloji.txt",
+        "score": 0.18426638841629028,
+        "text": "Mitokondri hucrenin enerji santralidir ve ATP uretir. Fotosentez kloroplastta gerceklesir."
+      }
+    ],
+    "elapsed": 5.871518850326538
+  },
+  {
+    "question": "Normlar hiyerarşisinde en üstte ne yer alır?",
+    "answer": "Anayasa\n\nExplanation: In the hierarchy of norms provided in the notes, Anayasa is listed as the highest authority, making it the ultimate norm. The hierarchy is given as follows: Anayasa, Kanun ve Milletlerarası Antlaşmalar, Cumhurbaşkanlığı Kararnameleri, and Yönetmelikler. Therefore, Anayasa is at the top of this hierarchy.",
+    "sources": [
+      {
+        "file": "notes/gemini-code-1787347593212.txt",
+        "score": 0.418682336807251,
+        "text": "Hukuk Sistemleri ve Temel Kavramlar\n\n1. Hukukun Tanımı ve Amacı\nHukuk, toplum içindeki bireylerin birbirleriyle ve devletle olan ilişkilerini düzenleyen, emredici ve yaptırımla desteklenmiş kurallar bütünüdür. Hukukun temel amacı adaleti sağlamak, toplumda huzur ve güven ortamı oluşturmaktır.\n\n2. Hukuk Kurallarının Özellikleri\n- Genellik: Aynı durumdaki herkes için geçerlidir.\n- Soyutluk: Somut bir olaya değil, genel durumlar için hazırlanır.\n- Süreklilik: Yürürlükten kaldırılana kadar uygulanır.\n- Yaptırım (Müeyyide): Uyulmadığında devlet gücüyle zor kullanılır.\n\n3. Hukuk Türleri\n- Pozitif Hukuk: Bir ülkede belirli bir zamanda yürürlükte olan yazılı ve yazısız tüm hukuk kurallarıdır.\n- Mevzuat (Yazılı Hukuk): Yetkili organlar tarafından konulan sadece yazılı hukuk kurallarını kapsar.\n- İdeal (Tabii) Hukuk: Olanı değil, olması gereken adaleti hedefleyen hukuk anlayışıdır.\n\n4. Normlar Hiyerarşisi\nHukuk kuralları alt-üst ilişkisi içindedir. Alt kademedeki bir kural, üst kademedeki kurala aykırı olamaz:\n1. Anayasa (En üst hukuk kuralıdır)\n2. Kanun ve Milletlerarası Antlaşmalar\n3. Cumhurbaşkanlığı Kararnameleri\n4. Yönetmelikler"
+      },
+      {
+        "file": "notes/notes1787347593212.txt",
+        "score": 0.418682336807251,
+        "text": "Hukuk Sistemleri ve Temel Kavramlar\n\n1. Hukukun Tanımı ve Amacı\nHukuk, toplum içindeki bireylerin birbirleriyle ve devletle olan ilişkilerini düzenleyen, emredici ve yaptırımla desteklenmiş kurallar bütünüdür. Hukukun temel amacı adaleti sağlamak, toplumda huzur ve güven ortamı oluşturmaktır.\n\n2. Hukuk Kurallarının Özellikleri\n- Genellik: Aynı durumdaki herkes için geçerlidir.\n- Soyutluk: Somut bir olaya değil, genel durumlar için hazırlanır.\n- Süreklilik: Yürürlükten kaldırılana kadar uygulanır.\n- Yaptırım (Müeyyide): Uyulmadığında devlet gücüyle zor kullanılır.\n\n3. Hukuk Türleri\n- Pozitif Hukuk: Bir ülkede belirli bir zamanda yürürlükte olan yazılı ve yazısız tüm hukuk kurallarıdır.\n- Mevzuat (Yazılı Hukuk): Yetkili organlar tarafından konulan sadece yazılı hukuk kurallarını kapsar.\n- İdeal (Tabii) Hukuk: Olanı değil, olması gereken adaleti hedefleyen hukuk anlayışıdır.\n\n4. Normlar Hiyerarşisi\nHukuk kuralları alt-üst ilişkisi içindedir. Alt kademedeki bir kural, üst kademedeki kurala aykırı olamaz:\n1. Anayasa (En üst hukuk kuralıdır)\n2. Kanun ve Milletlerarası Antlaşmalar\n3. Cumhurbaşkanlığı Kararnameleri\n4. Yönetmelikler"
+      },
+      {
+        "file": "notes/biyoloji.txt",
+        "score": 0.20073239505290985,
+        "text": "Mitokondri hucrenin enerji santralidir ve ATP uretir. Fotosentez kloroplastta gerceklesir."
+      }
+    ],
+    "elapsed": 6.820421934127808
+  }
+]
