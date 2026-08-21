@@ -1,24 +1,38 @@
 # 📚 Offline Ders Notu Asistanı (Foundry Local RAG)
 
-Bu proje, yerel belgeleriniz (PDF, TXT, DOCX) üzerinden çevrimdışı (offline) RAG mimarisi kullanarak soru-cevap, quiz ve flashcard üretimi yapan yapay zeka destekli bir çalışma asistanıdır.
-
-## 🚀 Özellikler
-- **Soru-Cevap:** Ders notlarınızdan doğrudan ve kaynak göstererek yanıt üretir.
-- **Quiz:** Notlarınıza dayalı çoktan seçmeli test soruları oluşturur ve skoru takip eder.
-- **Flashcard:** Kavramları kolayca öğrenmeniz için çalışma kartları üretir.
-- **Konu İlerlemesi:** Çözülen quizlerin başarı oranını konu bazında saklar.
+Bu proje, ders notlarınızı (PDF, TXT, DOCX) kullanarak çevrimdışı çalışan, veri gizliliğini ön planda tutan RAG tabanlı bir çalışma asistanıdır.
 
 ---
 
-## 🛠️ Kurulum ve Çalıştırma
+### 🛠️ Proje Mimari Yapısı
 
-### 1. Gereksinimler
-- **Python 3.9+**
-- **Foundry Local** (Yerel model servisi)
+Proje, yerel makinede yüksek performansla çalışmak üzere tasarlanmıştır:
 
-### 2. Adımlar
+- **Frontend:** Streamlit
+- **LLM Engine:** Foundry Local
+- **Vector Indexing:** FAISS
+- **Embeddings:** sentence-transformers (`all-MiniLM-L6-v2`)
+- **Veri Saklama:** Local JSON & Vector Index
 
-1. Bu depoyu indirin ve klasöre çıkarın:
-2. Terminal / Komut İstemi açıp proje klasörüne gidin:
-   ```bash
-   cd ders-notu-asistani
+---
+
+### ✨ Temel Özellikler
+
+- **💬 Soru-Cevap (QA):** Ders notlarınızdan doğrudan yanıt üretir. Yetersiz bilgi durumunda arama kapsamını otomatik genişletir ve kaynak gösterir.
+- **📝 Quiz Modu:** Notlara dayalı çoktan seçmeli sorular üretir, yanıtları değerlendirir ve açıklama sunar.
+- **🗂️ Flashcard:** Notlardaki kritik kavramları tespit ederek soru-cevap kartları oluşturur.
+- **📊 İlerleme Takibi:** Çözülen quiz performansını konu bazında saklar.
+
+---
+
+### 🚀 Kurulum ve Çalıştırma
+
+#### 1. Gereksinimler
+- Python 3.9+
+- Foundry Local (Yerel model servisi)
+
+#### 2. Adım Adım Kurulum
+
+1. Proje klasörüne gidin:
+```bash
+cd ders-notu-asistani
