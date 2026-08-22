@@ -1,10 +1,10 @@
-# 📚 Offline Ders Notu Asistanı (Foundry Local RAG)
+# Offline Ders Notu Asistanı (Foundry Local RAG)
 
 Bu proje, ders notlarınızı (PDF, TXT, DOCX) kullanarak çevrimdışı çalışan, veri gizliliğini ön planda tutan RAG tabanlı bir çalışma asistanıdır.
 
 ---
 
-### 🛠️ Proje Mimari Yapısı
+### Proje Mimari Yapısı
 
 Proje, yerel makinede yüksek performansla çalışmak üzere tasarlanmıştır:
 
@@ -16,16 +16,16 @@ Proje, yerel makinede yüksek performansla çalışmak üzere tasarlanmıştır:
 
 ---
 
-### ✨ Temel Özellikler
+###  Temel Özellikler
 
-- **💬 Soru-Cevap (QA):** Ders notlarınızdan doğrudan yanıt üretir. Yetersiz bilgi durumunda arama kapsamını otomatik genişletir ve kaynak gösterir.
-- **📝 Quiz Modu:** Notlara dayalı çoktan seçmeli sorular üretir, yanıtları değerlendirir ve açıklama sunar.
-- **🗂️ Flashcard:** Notlardaki kritik kavramları tespit ederek soru-cevap kartları oluşturur.
-- **📊 İlerleme Takibi:** Çözülen quiz performansını konu bazında saklar.
+- ** Soru-Cevap (QA):** Ders notlarınızdan doğrudan yanıt üretir. Yetersiz bilgi durumunda arama kapsamını otomatik genişletir ve kaynak gösterir.
+- ** Quiz Modu:** Notlara dayalı çoktan seçmeli sorular üretir, yanıtları değerlendirir ve açıklama sunar.
+- ** Flashcard:** Notlardaki kritik kavramları tespit ederek soru-cevap kartları oluşturur.
+- ** İlerleme Takibi:** Çözülen quiz performansını konu bazında saklar.
 
 ---
 
-### 🚀 Kurulum ve Çalıştırma
+###  Kurulum ve Çalıştırma
 
 #### 1. Gereksinimler
 - Python 3.9+
