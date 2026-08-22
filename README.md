@@ -18,10 +18,10 @@ Proje, yerel makinede yüksek performansla çalışmak üzere tasarlanmıştır:
 
 ###  Temel Özellikler
 
-- ** Soru-Cevap (QA):** Ders notlarınızdan doğrudan yanıt üretir. Yetersiz bilgi durumunda arama kapsamını otomatik genişletir ve kaynak gösterir.
-- ** Quiz Modu:** Notlara dayalı çoktan seçmeli sorular üretir, yanıtları değerlendirir ve açıklama sunar.
-- ** Flashcard:** Notlardaki kritik kavramları tespit ederek soru-cevap kartları oluşturur.
-- ** İlerleme Takibi:** Çözülen quiz performansını konu bazında saklar.
+-  Soru-Cevap (QA: Ders notlarınızdan doğrudan yanıt üretir. Yetersiz bilgi durumunda arama kapsamını otomatik genişletir ve kaynak gösterir.
+-  Quiz Modu:  Notlara dayalı çoktan seçmeli sorular üretir, yanıtları değerlendirir ve açıklama sunar.
+-  Flashcard:  Notlardaki kritik kavramları tespit ederek soru-cevap kartları oluşturur.
+-  İlerleme Takibi:  Çözülen quiz performansını konu bazında saklar.
 
 ---
 
