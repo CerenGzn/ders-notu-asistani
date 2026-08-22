@@ -8,11 +8,11 @@ Bu proje, ders notlarınızı (PDF, TXT, DOCX) kullanarak çevrimdışı çalı�
 
 Proje, yerel makinede yüksek performansla çalışmak üzere tasarlanmıştır:
 
-- **Frontend:** Streamlit
-- **LLM Engine:** Foundry Local
-- **Vector Indexing:** FAISS
-- **Embeddings:** sentence-transformers (`all-MiniLM-L6-v2`)
-- **Veri Saklama:** Local JSON & Vector Index
+- ** Frontend: ** Streamlit
+- ** LM Engine: ** Foundry Local
+- ** Vector Indexing: ** FAISS
+- ** Embeddings: ** sentence-transformers (`all-MiniLM-L6-v2`)
+- **V eri Saklama: ** Local JSON & Vector Index
 
 ---
 
