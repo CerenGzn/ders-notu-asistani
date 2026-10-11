@@ -24,7 +24,7 @@ READERS = {".pdf": read_pdf, ".docx": read_docx, ".txt": read_text, ".md": read_
 def iter_source_files(root: str):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if not d.startswith(".")]
-        for fname in filenames:
+        for fname in sorted(filenames):
             ext = os.path.splitext(fname)[1].lower()
             if ext in config.INDEXED_EXTENSIONS:
                 yield os.path.join(dirpath, fname)
@@ -32,6 +32,8 @@ def iter_source_files(root: str):
 def chunk_text(text: str, source: str):
     chunks = []
     step = config.CHUNK_CHARS - config.CHUNK_OVERLAP
+    if step <= 0:
+        raise ValueError("CHUNK_OVERLAP must be smaller than CHUNK_CHARS")
     for start in range(0, len(text), step):
         end = min(start + config.CHUNK_CHARS, len(text))
         piece = text[start:end].strip()
@@ -76,9 +78,13 @@ def main():
     index = faiss.IndexFlatIP(dim)
     index.add(embeddings)
 
-    faiss.write_index(index, config.INDEX_PATH)
-    with open(config.META_PATH, "w", encoding="utf-8") as f:
-        json.dump(all_chunks, f)
+    index_tmp = config.INDEX_PATH + ".tmp"
+    meta_tmp = config.META_PATH + ".tmp"
+    faiss.write_index(index, index_tmp)
+    with open(meta_tmp, "w", encoding="utf-8") as f:
+        json.dump(all_chunks, f, ensure_ascii=False, indent=2)
+    os.replace(index_tmp, config.INDEX_PATH)
+    os.replace(meta_tmp, config.META_PATH)
 
     topics = sorted(set(c["topic"] for c in all_chunks))
     print(f"\nDone. Indexed {len(all_chunks)} chunks across topics: {', '.join(topics)}")

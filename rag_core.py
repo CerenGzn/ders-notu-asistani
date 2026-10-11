@@ -1,5 +1,5 @@
-import eval_type_backport
 import json
+import os
 import re
 import faiss
 import random
@@ -28,18 +28,29 @@ Format:
 class StudyEngine:
     def __init__(self):
         self.embedder = SentenceTransformer(config.EMBEDDING_MODEL)
-        self.index = faiss.read_index(config.INDEX_PATH)
-        with open(config.META_PATH, "r", encoding="utf-8") as f:
-            self.meta = json.load(f)
+        self.reload_index()
 
         self.manager = FoundryLocalManager(config.FOUNDRY_MODEL_ALIAS)
         self.client = openai.OpenAI(base_url=self.manager.endpoint, api_key=self.manager.api_key)
         self.model_id = self.manager.get_model_info(config.FOUNDRY_MODEL_ALIAS).id
 
+    def reload_index(self):
+        if not os.path.isfile(config.INDEX_PATH) or not os.path.isfile(config.META_PATH):
+            raise FileNotFoundError("Document index not found. Run python ingest.py first.")
+        index = faiss.read_index(config.INDEX_PATH)
+        with open(config.META_PATH, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+        if index.ntotal != len(meta):
+            raise ValueError("Index and metadata do not match. Run python ingest.py again.")
+        self.index = index
+        self.meta = meta
+
     def topics(self):
         return sorted(set(c["topic"] for c in self.meta))
 
     def retrieve(self, query: str, k: int, topic: str = None):
+        if self.index.ntotal == 0 or k <= 0:
+            return []
         q_vec = self.embedder.encode([query], normalize_embeddings=True)
         q_vec = np.asarray(q_vec, dtype="float32")
         fetch_k = k * 5 if topic else k
@@ -74,6 +85,8 @@ class StudyEngine:
 
     def answer(self, query: str, topic: str = None):
         chunks = self.retrieve(query, config.TOP_K, topic)
+        if not chunks:
+            return "Bu soruyla ilgili not bulunamadı.", [], False
         prompt = f"Notes:\n{self._context_block(chunks)}\n\nQuestion: {query}\n\nAnswer:"
         text = self._chat(QA_SYSTEM_PROMPT, prompt, temperature=0.0)
 
@@ -91,6 +104,9 @@ class StudyEngine:
         all_chunks = self.retrieve(topic or "notlar", k=15, topic=topic if topic != "(hepsi)" else None)
         if not all_chunks:
             all_chunks = self.meta
+
+        if not all_chunks:
+            return [], "No indexed study notes available."
 
         quizzes = []
         raw_all = ""
@@ -119,7 +135,7 @@ AÇIKLAMA: [Açıklama]
             lines = [l.strip() for l in raw.strip().split("\n") if l.strip()]
             q_text = ""
             options = []
-            correct_idx = 0
+            correct_idx = None
             explanation = "Açıklama yok."
 
             for line in lines:
@@ -129,11 +145,11 @@ AÇIKLAMA: [Açıklama]
                     options.append(re.sub(r"^[A-Da-d][\)\.]", "", line).strip())
                 elif line.startswith("CEVAP:"):
                     ans_let = line.replace("CEVAP:", "").strip().upper()
-                    correct_idx = letter_to_idx.get(ans_let[0] if ans_let else "A", 0)
+                    correct_idx = letter_to_idx.get(ans_let[0] if ans_let else "")
                 elif line.startswith("AÇIKLAMA:"):
                     explanation = line.replace("AÇIKLAMA:", "").strip()
 
-            if q_text and len(options) >= 2:
+            if q_text and len(options) == 4 and correct_idx is not None:
                 quizzes.append({
                     "question": q_text,
                     "options": options[:4],
@@ -148,6 +164,8 @@ AÇIKLAMA: [Açıklama]
         if not chunks:
             chunks = self.meta[:3]
         
+        if not chunks:
+            return [], "No indexed study notes available."
         prompt = f"Notes:\n{self._context_block(chunks)}\n\nJSON formatında 5 çalışma kartı üret."
         raw = self._chat(FLASHCARD_JSON_PROMPT, prompt, temperature=0.3, max_tokens=1000)
         
