@@ -1,8 +1,0 @@
-foundry-local-sdk
-openai
-faiss-cpu
-sentence-transformers
-streamlit
-numpy
-pypdf
-python-docx
